@@ -26,12 +26,14 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.A) && canMoveLeft){
-            transform.position -= transform.right * Time.deltaTime * speed;
+        if (Input.GetKey(KeyCode.A)){
+            if (canMoveLeft)
+                transform.position -= transform.right * Time.deltaTime * speed;
         }
 
-        else if (Input.GetKey(KeyCode.D) && canMoveRight){
-            transform.position += transform.right * Time.deltaTime * speed;            
+        else if (Input.GetKey(KeyCode.D)){
+            if (canMoveRight)
+                transform.position += transform.right * Time.deltaTime * speed;
         }        
     }
 

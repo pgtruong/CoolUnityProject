@@ -16,4 +16,11 @@ public class BulletMovement : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    void OnCollisionEnter(Collision collision) {
+        if(collision.gameObject.CompareTag("enemy")){
+            Destroy(collision.gameObject);
+            Destroy(this.gameObject);
+        }
+    }
 }
